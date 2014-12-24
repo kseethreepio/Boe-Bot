@@ -1,0 +1,14 @@
+' Robotics with the Boe-Bot - ServoP13Clockwise.bs2
+' Run the servo connected to P13 full speed clockwise by sending 1.3 ms pulse train.
+' Pulse widths less than 1.5 ms (750 2-microsecs) will rotate the servo clockwise.
+
+' {$STAMP BS2}
+' {$PBASIC 2.5}
+
+DEBUG "The servo... it's... ALIVE!"
+
+DO
+'	PULSOUT 13, 650
+	PULSOUT 12, 650
+  PAUSE 20
+LOOP

@@ -1,0 +1,14 @@
+' Robotics with the Boe-Bot - HighLowLed.bs2
+' Turns the LED connected to pin 13 on/off every second.
+
+' {$STAMP BS2}
+' {$PBASIC 2.5}
+
+DEBUG "The LED connected to Pin 13 is now blinking."
+
+DO
+	HIGH 13
+  PAUSE 500
+  LOW 13
+  PAUSE 500
+LOOP

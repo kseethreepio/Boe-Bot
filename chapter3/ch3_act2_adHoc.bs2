@@ -1,0 +1,33 @@
+' Robotics with the Boe-Bot - WheelTest.bs2
+' I'm an idiot and saved over the original... re-writing wheel roll fwd/backward test.
+' Since I'm already re-writing this, might as well add a startup tone to the start.
+
+' {$STAMP BS2}
+' {$PBASIC 2.5}
+
+DEBUG CLS, "HAL, commencing move test. Mission name 'rolling, rolling, rolling.'" 'The joke isn't funny now that I have to freaking re-write all of this. I know it's not complicated/much, but still. It's an inefficient use of time. And it really irks me. /rant
+FREQOUT 4, 1000, 3000 'Tone to indicate prog has started
+
+' Declare variables
+counter   VAR   Byte
+
+' Roll forward for a bit.
+FOR counter = 1 TO 61
+	PULSOUT 12, 650
+	PULSOUT 13, 850
+	PAUSE 20
+NEXT
+
+' Revel in the success.
+FOR counter = 1 TO 61
+	PAUSE 20
+NEXT
+
+' Now rolling back into place.
+FOR counter = 1 TO 61
+	PULSOUT 12, 850
+  PULSOUT 13, 650
+  PAUSE 20
+NEXT
+
+END

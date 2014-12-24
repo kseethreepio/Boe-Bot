@@ -1,0 +1,40 @@
+' Robotics with the Boe-Bot - TestServoSpeed.bs2
+' Practice with DEBUGIN (essentially breakpoint) and testing for RPM values on servos.
+' Instead of book's approach of spinning both wheels for 6 seconds, I'd rather do them one at a time.
+' And since I'm already doing that, might as well dynamically figure out number of steps to loop over.
+' No. steps = (1000 * desired duration [6 s]) / ((0.002 * pulse width) + 21.3)
+' UPDATE: Scratch that. Math is too imprecise, not sure yet if PBASIC supports floats... Manual.
+
+' {$STAMP BS2}
+' {$PBASIC 2.5}
+
+DEBUG CLS, "HAL, commencing tone test. Mission name 'wheels just keep on spinning.'"
+FREQOUT 4, 1000, 3000 'Tone to indicate prog has started
+
+' Declare variables.
+counter     VAR   Word
+'pulseWidth  VAR   Word
+
+' Get pulse width inputted via DEBUGIN. Note, applying same pulse width to both servos.
+'DEBUG CR, "Enter desired pulse width: "
+'DEBUGIN DEC pulseWidth
+
+' Start spinning right wheel for 6 seconds.
+FOR counter = 1 TO 265
+'	PULSOUT 12, 650 'Full-speed CW
+	PULSOUT 12, 850 'Full-speed CCW
+  PAUSE 20
+NEXT
+
+FOR counter = 1 TO 6
+  PAUSE 1000
+NEXT
+
+' Start spinning left wheel for 6 seconds.
+FOR counter = 1 TO 265
+'	PULSOUT 13, 650 'Full-speed CW
+	PULSOUT 13, 850 'Full-speed CCW
+  PAUSE 20
+NEXT
+
+END

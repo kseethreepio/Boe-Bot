@@ -1,0 +1,31 @@
+' Robotics with the Boe-Bot - ControlServoRunTimes.bs2
+' Turning the servos for a finite amount of time.
+' Pulse widths greater than 1.5 ms (750 2-microsecs) will rotate the servo counterclockwise.
+' Pulse widths less than 1.5 ms (750 2-microsecs) will rotate the servo clockwise.
+
+' {$STAMP BS2}
+' {$PBASIC 2.5}
+
+DEBUG "Rolling along... for now."
+
+cServoTurns   VAR   Byte
+
+FOR cServoTurns = 1 TO 100
+	PULSOUT 13, 720
+  HIGH 12
+  PAUSE 20
+  LOW 12
+NEXT
+
+FOR cServoTurns = 1 TO 100
+	PULSOUT 12, 780
+  PAUSE 20
+NEXT
+
+FOR cServoTurns = 1 TO 122
+	PULSOUT 13, 850
+  PULSOUT 12, 650
+  PAUSE 20
+NEXT
+
+END

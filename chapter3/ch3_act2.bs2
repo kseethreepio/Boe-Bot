@@ -1,0 +1,42 @@
+' Robotics with the Boe-Bot - RightServoTest.bs2
+' Testing the wheels + servo after putting the robot together for the first time.
+' Right wheel is P12, left wheel is P13.
+
+' {$STAMP BS2}
+' {$PBASIC 2.5}
+
+DEBUG CR, "HAL, post-assembly wheel test!"
+
+counter   VAR   Word
+
+FOR counter = 1 TO 122
+	PULSOUT 13, 650
+  PAUSE 20
+NEXT
+
+FOR counter = 1 TO 122
+	PULSOUT 13, 750
+  PAUSE 20
+NEXT
+
+FOR counter = 1 TO 122
+	PULSOUT 13, 850
+  PAUSE 20
+NEXT
+
+FOR counter = 1 TO 122
+	PULSOUT 12, 650
+  PAUSE 20
+NEXT
+
+FOR counter = 1 TO 122
+	PULSOUT 12, 750
+  PAUSE 20
+NEXT
+
+FOR counter = 1 TO 122
+	PULSOUT 12, 850
+  PAUSE 20
+NEXT
+
+END

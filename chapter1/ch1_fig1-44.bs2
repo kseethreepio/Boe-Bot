@@ -1,0 +1,9 @@
+' {$STAMP BS2}
+' {$PBASIC 2.5}
+
+DEBUG "Hello, this is a message from HAL, your Boe-Bot."
+DEBUG CR, "What's 7 times 11?"
+DEBUG CR, "It's: ", DEC 7 * 11
+DEBUG CR, 66, 65, 83, 73, 67, 32, 83, 116, 97, 109, 112, 32, 50
+
+END

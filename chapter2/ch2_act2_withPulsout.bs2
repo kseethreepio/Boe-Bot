@@ -1,0 +1,13 @@
+' Robotics with the Boe-Bot - PulseBothLEDs.bs2
+' Sends a 0.13 second pulse to P13 and P12 every 2 seconds.
+
+' {$STAMP BS2}
+' {$PBASIC 2.5}
+
+DEBUG "Now both LEDs are blinking... one after another."
+
+DO
+	PULSOUT 12, 650
+	PULSOUT 13, 650
+  PAUSE 20
+LOOP

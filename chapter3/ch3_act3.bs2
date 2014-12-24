@@ -1,0 +1,15 @@
+' Robotics with the Boe-Bot - WheelTest.bs2
+' I'm an idiot and saved over the original... re-writing wheel roll fwd/backward test.
+' Since I'm already re-writing this, might as well add a startup tone to the start.
+
+' {$STAMP BS2}
+' {$PBASIC 2.5}
+
+DEBUG CLS, "HAL, commencing tone test. Mission name 'beep-beep, I'm a truck.'" 'The joke isn't funny now that I have to freaking re-write all of this. I know it's not complicated/much, but still. It's an inefficient use of time. And it really irks me. /rant
+
+FREQOUT 4, 2000, 3000 'Pin, duration in ms, freq in hertz
+
+DO
+	DEBUG CR, "Waiting to reset..."
+  PAUSE 500
+LOOP
